@@ -13,7 +13,8 @@ server.listen(PORT, async () => {
 	try {
 		console.log(`Server raised at port ${PORT}`);
 
-		await mongoose.connect(process.env.DB_URL);
+		const res = await mongoose.connect(process.env.DB_URL);
+		//console.log(res);
 
 		console.log("DB Connected Successfully!");
 	} catch (error) {
